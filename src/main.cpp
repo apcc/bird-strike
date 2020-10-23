@@ -1,6 +1,7 @@
 #include <Siv3D.hpp>
 #include <common.hpp>
 #include <scenes.hpp>
+#include <utils.hpp>
 
 void Main() {
   FontAsset::Register(U"TitleFont", 60, Typeface::Heavy);
@@ -10,11 +11,15 @@ void Main() {
   Window::SetStyle(WindowStyle::Sizable);
   Window::SetTitle(U"Bird Strike!");
 
+  // disable closing app with Esc
+  System::SetTerminationTriggers(UserAction::CloseButtonClicked);
+
   App manager;
 
   registerScenes(manager);
 
   while (System::Update()) {
+    Utils::fullScreenTrigger();
     if (!manager.update())
       break;
   }
