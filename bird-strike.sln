@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bird-strike", "bird-strike.vcxproj", "{9A4FC9C4-2C12-4F15-B337-DB4870F68EAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A4FC9C4-2C12-4F15-B337-DB4870F68EAA}.Debug|x64.ActiveCfg = Debug|x64
+		{9A4FC9C4-2C12-4F15-B337-DB4870F68EAA}.Debug|x64.Build.0 = Debug|x64
+		{9A4FC9C4-2C12-4F15-B337-DB4870F68EAA}.Release|x64.ActiveCfg = Release|x64
+		{9A4FC9C4-2C12-4F15-B337-DB4870F68EAA}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82AC3327-2E0D-4407-8D69-76FEC6C6B74D}
+	EndGlobalSection
+EndGlobal
