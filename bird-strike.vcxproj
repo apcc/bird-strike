@@ -116,6 +116,11 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)src\</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)src\</AdditionalIncludeDirectories>
     </ClCompile>
+    <ClCompile Include="src\scenes.cpp" />
+    <ClCompile Include="src\scenes\Description.cpp" />
+    <ClCompile Include="src\scenes\Game.cpp" />
+    <ClCompile Include="src\scenes\Result.cpp" />
+    <ClCompile Include="src\scenes\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\engine\texture\box-shadow\128.png" />
@@ -240,6 +245,14 @@
     <None Include="App\example\shader\2d\swirl.hlsl">
       <FileType>Document</FileType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\common.hpp" />
+    <ClInclude Include="src\scenes.hpp" />
+    <ClInclude Include="src\scenes\Description.hpp" />
+    <ClInclude Include="src\scenes\Game.hpp" />
+    <ClInclude Include="src\scenes\Result.hpp" />
+    <ClInclude Include="src\scenes\Title.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
