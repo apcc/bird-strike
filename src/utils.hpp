@@ -2,7 +2,5 @@
 #include <Siv3D.hpp>
 
 namespace Utils {
-  void fullScreenTrigger();
-
-  inline bool isFullScreen = false;
+  void fullScreenTrigger(bool& isFullScreen);
 }

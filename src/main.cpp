@@ -15,11 +15,12 @@ void Main() {
   System::SetTerminationTriggers(UserAction::CloseButtonClicked);
 
   App manager;
+  bool isFullScreen = false;
 
   registerScenes(manager);
 
   while (System::Update()) {
-    Utils::fullScreenTrigger();
+    Utils::fullScreenTrigger(isFullScreen);
     if (!manager.update())
       break;
   }

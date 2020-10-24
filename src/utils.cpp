@@ -1,6 +1,6 @@
 #include "Utils.hpp"
 
-void Utils::fullScreenTrigger() {
+void Utils::fullScreenTrigger(bool& isFullScreen) {
   if (!isFullScreen && KeyF11.down()) {
     if (Window::SetFullscreen(true, unspecified, WindowResizeOption::KeepSceneSize))
       isFullScreen = true;
