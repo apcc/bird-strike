@@ -56,8 +56,11 @@ Resource(engine/soundfont/GMGSx.sf2.zstdcmp)
 // Siv3D App Resources (Your application resources here)
 //
 //////////////////////////////////////////////////////
-
-
+Resource(src/assets/fonts/Cornerstone.ttf)
+Resource(src/assets/fonts/NotoSansJP-Medium.otf)
+Resource(src/assets/fonts/NotoSansJP-Bold.otf)
+Resource(src/assets/fonts/Inter-Medium.ttf)
+Resource(src/assets/fonts/Inter-Bold.ttf)
 
 /* 
 	//
