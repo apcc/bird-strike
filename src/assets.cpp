@@ -14,7 +14,7 @@ void registerFontAssets() {
   FontAsset::Register(U"Inter-B-24", 24, toResourcePath(Noto_Bold));
 }
 
-FilePath toResourcePath(FilePath _path) {
+FilePath inline toResourcePath(FilePath _path) {
   #if SIV3D_PLATFORM(WINDOWS)
   return Resource(_path);
   #else
