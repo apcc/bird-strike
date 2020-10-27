@@ -1,15 +1,23 @@
 #include "assets.hpp"
 
 void registerFontAssets() {
-  const String Cornerstone = U"src/assets/fonts/Cornerstone.ttf";
-  const String Noto_Medium = U"src/assets/fonts/NotoSansJP-Medium.otf";
-  const String Noto_Bold = U"src/assets/fonts/NotoSansJP-Bold.otf";
-  const String Inter_Medium = U"src/assets/fonts/Inter-Medium.ttf";
-  const String Inter_Bold = U"src/assets/fonts/Inter-Bold.ttf";
+  const FilePath Cornerstone = U"resources/fonts/Cornerstone.ttf";
+  const FilePath Noto_Medium = U"resources/fonts/NotoSansJP-Medium.otf";
+  const FilePath Noto_Bold = U"resources/fonts/NotoSansJP-Bold.otf";
+  const FilePath Inter_Medium = U"resources/fonts/Inter-Medium.ttf";
+  const FilePath Inter_Bold = U"resources/fonts/Inter-Bold.ttf";
 
-  FontAsset::Register(U"TitleFont", 60, Resource(Cornerstone));
-  FontAsset::Register(U"Noto-M-24", 24, Resource(Noto_Medium));
-  FontAsset::Register(U"Noto-B-24", 24, Resource(Noto_Bold));
-  FontAsset::Register(U"Inter-M-24", 24, Resource(Noto_Medium));
-  FontAsset::Register(U"Inter-B-24", 24, Resource(Noto_Bold));
+  FontAsset::Register(U"TitleFont", 60, toResourcePath(Cornerstone));
+  FontAsset::Register(U"Noto-M-24", 24, toResourcePath(Noto_Medium));
+  FontAsset::Register(U"Noto-B-24", 24, toResourcePath(Noto_Bold));
+  FontAsset::Register(U"Inter-M-24", 24, toResourcePath(Noto_Medium));
+  FontAsset::Register(U"Inter-B-24", 24, toResourcePath(Noto_Bold));
+}
+
+FilePath toResourcePath(FilePath _path) {
+  #if SIV3D_PLATFORM(WINDOWS)
+  return Resource(_path);
+  #else
+  return _path;
+  #endif
 }
