@@ -4,6 +4,7 @@ Game::Game(const InitData& init) : IScene(init) {}
 
 void Game::update() {
   if (MouseL.down()) {
+    getData().score = Random<int32>(1984, 19937);
     changeScene(U"Result");
   }
 }
