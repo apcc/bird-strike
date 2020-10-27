@@ -112,6 +112,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\scenes\Game\Bird.cpp" />
     <ClCompile Include="src\scenes\Game\Enemy.cpp" />
     <ClCompile Include="src\scenes\Game\Player.cpp" />
     <ClCompile Include="src\utils.cpp" />
@@ -250,6 +251,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\scenes\Game\Bird.hpp" />
     <ClInclude Include="src\scenes\Game\Enemy.hpp" />
     <ClInclude Include="src\scenes\Game\Player.hpp" />
     <ClInclude Include="src\utils.hpp" />

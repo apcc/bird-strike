@@ -398,6 +398,9 @@
     <ClCompile Include="src\scenes\Game\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\scenes\Game\Bird.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\scenes\Title.hpp">
@@ -425,6 +428,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="src\scenes\Game\Player.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\Game\Bird.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
