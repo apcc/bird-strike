@@ -1,11 +1,24 @@
 #include "Game.hpp"
 
-Game::Game(const InitData& init) : IScene(init) {}
+Game::Game(const InitData& init) : IScene(init), player() {
+  enemy_timer.set(0s);
+  enemy_timer.start();
+}
 
 void Game::update() {
   if (MouseL.down()) {
     changeScene(U"Result");
   }
+
+  if (enemy_timer.reachedZero()) {
+    enemies.emplace_back();
+    enemy_timer.set(SecondsF((Random(1.0, 2.0) / 10000)));
+  }
+
+  player.update();
+  enemies.each([](Enemy& e) { e.update(); });
+  enemies.remove_if([](const Enemy& e) { return e.shouldBeErased(); });
+  enemies.sort_by([](const Enemy& a, const Enemy& b) { return a.getDepth() > b.getDepth(); });
 }
 
 void Game::draw() const {
@@ -13,5 +26,6 @@ void Game::draw() const {
 
   FontAsset(U"TitleFont")(U"Game").drawAt(400, 100);
 
-  Circle(Cursor::Pos(), 50).draw(Palette::Orange);
+  player.draw();
+  enemies.each([](const Enemy& e) { e.draw(); });
 }

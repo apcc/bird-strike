@@ -2,8 +2,14 @@
 
 #include <Siv3D.hpp>
 #include <common.hpp>
+#include "Game/Enemy.hpp"
+#include "Game/Player.hpp"
 
 class Game : public App::Scene {
+  Player player;
+  Array<Enemy> enemies;
+  Timer enemy_timer;
+
 public:
   Game(const InitData& init);
 
