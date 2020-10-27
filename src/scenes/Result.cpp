@@ -1,6 +1,8 @@
 #include "Result.hpp"
 
-Result::Result(const InitData& init) : IScene(init) {}
+Result::Result(const InitData& init)
+  : IScene(init) {
+}
 
 void Result::update() {
   if (MouseL.down()) {
