@@ -19,3 +19,13 @@ void Player::update() {
 void Player::draw() const {
   shape().draw(Palette::Cyan);
 }
+
+void Player::decreaseHP(int32 damage) {
+  hp -= damage;
+  Print << hp;
+}
+
+int32 Player::getHP() const{
+  return hp;
+}
+
