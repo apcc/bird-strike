@@ -7,6 +7,7 @@ class Enemy final {
 
   double depth;
   constexpr static double speed = 0.1;
+  constexpr static int32 damage = 1;
 
 public:
   Enemy();
@@ -22,4 +23,6 @@ public:
   bool collidesWith(const Player& p) const;
 
   Circle shape() const { return Circle(pos, 20); }
+
+  static int32 getDamage();
 };

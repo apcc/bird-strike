@@ -21,3 +21,7 @@ double Enemy::getDepth() const {
 bool Enemy::collidesWith(const Player& p) const {
   return (p.shape().intersects(shape()));
 }
+
+int32 Enemy::getDamage() {
+  return damage;
+}
