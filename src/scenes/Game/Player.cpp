@@ -1,6 +1,8 @@
 #include "Player.hpp"
 
-Player::Player() : pos(0, 0) {}
+Player::Player()
+  : pos(0, 0) {
+}
 
 void Player::update() {
   if (KeyW.pressed())
@@ -25,7 +27,6 @@ void Player::decreaseHP(int32 damage) {
   Print << hp;
 }
 
-int32 Player::getHP() const{
+int32 Player::getHP() const {
   return hp;
 }
-

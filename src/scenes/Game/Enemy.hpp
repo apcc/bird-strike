@@ -2,7 +2,8 @@
 #include <Siv3D.hpp>
 #include "Player.hpp"
 
-class Enemy final {
+class Enemy {
+protected:
   Vec2 pos;
 
   double depth;
@@ -12,17 +13,17 @@ class Enemy final {
 public:
   Enemy();
 
-  void update();
+  virtual void update();
 
-  void draw() const;
-
+  virtual void draw() const;
+  
   bool shouldBeErased() const;
 
   double getDepth() const;
 
-  bool collidesWith(const Player& p) const;
+  virtual bool collidesWith(const Player& p) const;
 
-  Circle shape() const { return Circle(pos, 20); }
+  virtual Circle shape() const { return Circle(pos, 20); }
 
   static int32 getDamage();
 };

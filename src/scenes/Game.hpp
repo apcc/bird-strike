@@ -2,7 +2,7 @@
 
 #include <Siv3D.hpp>
 #include <common.hpp>
-#include "Game/Enemy.hpp"
+#include "Game/Bird.hpp"
 #include "Game/Player.hpp"
 
 class Game : public App::Scene {

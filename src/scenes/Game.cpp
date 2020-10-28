@@ -16,7 +16,12 @@ void Game::update() {
   }
 
   player.update();
-  enemies.each([](Enemy& e) { e.update(); });
+  enemies.each([&](Enemy& e) {
+    e.update();
+    if (e.collidesWith(this->player)) {
+      this->player.decreaseHP(e.getDamage());
+    }
+  });
   enemies.remove_if([](const Enemy& e) { return e.shouldBeErased(); });
   enemies.sort_by([](const Enemy& a, const Enemy& b) { return a.getDepth() > b.getDepth(); });
 }
