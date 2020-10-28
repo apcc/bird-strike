@@ -9,6 +9,7 @@ protected:
   double depth;
   constexpr static double speed = 0.1;
   constexpr static int32 damage = 1;
+  bool intersected;
 
 public:
   Enemy();
@@ -21,7 +22,7 @@ public:
 
   double getDepth() const;
 
-  virtual bool collidesWith(const Player& p) const;
+  virtual bool collidesWith(const Player& p);
 
   virtual Circle shape() const { return Circle(pos, 20); }
 

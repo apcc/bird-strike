@@ -1,6 +1,6 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy() : pos(RandomVec2(Scene::Rect())), depth(1) {}
+Enemy::Enemy() : pos(RandomVec2(Scene::Rect())), depth(1), intersected(false) {}
 
 void Enemy::update() {
   depth -= Scene::DeltaTime() * speed;
@@ -11,15 +11,15 @@ void Enemy::draw() const {
 }
 
 bool Enemy::shouldBeErased() const {
-  return depth < 0;
+  return depth < 0 || intersected;
 }
 
 double Enemy::getDepth() const {
   return depth;
 }
 
-bool Enemy::collidesWith(const Player& p) const {
-  return (p.shape().intersects(shape()));
+bool Enemy::collidesWith(const Player& p) {
+  return intersected =  (p.shape().intersects(shape()));
 }
 
 int32 Enemy::getDamage() {
