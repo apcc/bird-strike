@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game(const InitData& init) : IScene(init), start_time(Scene::Time()), player() {
+Game::Game(const InitData& init) : IScene(init), start_time(Scene::Time()) {
   enemy_timer.set(0s);
   enemy_timer.start();
 }
