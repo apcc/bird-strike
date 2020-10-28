@@ -14,7 +14,7 @@ void Game::update() {
 
   if (enemy_timer.reachedZero()) {
     enemies.emplace_back();
-    enemy_timer.set(SecondsF((Random(1.0, 2.0) / 10000)));
+    enemy_timer.set(SecondsF((Random(1.0, 2.0) / 1000 / (game_time + 1))));
   }
 
   player.update();
