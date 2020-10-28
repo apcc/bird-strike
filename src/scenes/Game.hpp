@@ -2,12 +2,13 @@
 
 #include <Siv3D.hpp>
 #include <common.hpp>
+#include <memory>
 #include "Game/Bird.hpp"
 #include "Game/Player.hpp"
 
 class Game : public App::Scene {
   Player player;
-  Array<Enemy> enemies;
+  Array < std::shared_ptr<Enemy> > enemies;
   Timer enemy_timer;
   const double start_time;
   double game_time;

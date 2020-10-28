@@ -14,17 +14,17 @@ protected:
 public:
   Enemy();
 
-  virtual void update();
+  virtual void update() = 0;
 
-  virtual void draw() const;
+  virtual void draw() const = 0;
   
   bool shouldBeErased() const;
 
   double getDepth() const;
 
-  virtual bool collidesWith(const Player& p);
+  bool collidesWith(const Player& p);
 
-  virtual Circle shape() const { return Circle(pos, 20); }
+  virtual Circle shape() const = 0;
 
-  static int32 getDamage();
+  virtual int32 getDamage() const = 0;
 };

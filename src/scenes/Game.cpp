@@ -13,19 +13,21 @@ void Game::update() {
   game_time = Scene::Time() - start_time;
 
   if (enemy_timer.reachedZero()) {
-    enemies.emplace_back();
+    enemies.push_back(std::make_shared<Bird>());
     enemy_timer.set(SecondsF((Random(1.0, 2.0) / 1000 / (game_time + 1))));
   }
 
   player.update();
-  enemies.each([&](Enemy& e) {
-    e.update();
-    if (e.collidesWith(this->player)) {
-      this->player.decreaseHP(e.getDamage());
+  enemies.each([&](std::shared_ptr<Enemy> e) {
+    e->update();
+    if (e->collidesWith(this->player)) {
+      this->player.decreaseHP(e->getDamage());
     }
   });
-  enemies.remove_if([](const Enemy& e) { return e.shouldBeErased(); });
-  enemies.sort_by([](const Enemy& a, const Enemy& b) { return a.getDepth() > b.getDepth(); });
+  enemies.remove_if([](const std::shared_ptr<Enemy> e) {return e->shouldBeErased(); });
+  enemies.sort_by([](const std::shared_ptr<Enemy> a, const std::shared_ptr<Enemy> b) {
+    return a->getDepth() > b->getDepth();
+  });
 }
 
 void Game::draw() const {
@@ -34,5 +36,5 @@ void Game::draw() const {
   FontAsset(U"TitleFont")(game_time).drawAt(400, 100);
 
   player.draw();
-  enemies.each([](const Enemy& e) { e.draw(); });
+  enemies.each([](const std::shared_ptr<Enemy> e) { e->draw(); });
 }

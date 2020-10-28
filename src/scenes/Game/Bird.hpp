@@ -9,17 +9,11 @@ public:
 public:
   Bird();
 
-  void update();
+  void update() override;
 
-  void draw() const;
+  void draw() const override;
 
-  bool shouldBeErased() const;
+  Circle shape() const override { return Circle(pos, 20); }
 
-  double getDepth() const;
-
-  bool collidesWith(const Player& p) const;
-
-  Circle shape() const { return Circle(pos, 20); }
-
-  static int32 getDamage();
+  int32 getDamage() const override;
 };
