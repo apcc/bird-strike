@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game(const InitData& init) : IScene(init), player() {
+Game::Game(const InitData& init) : IScene(init), start_time(Scene::Time()), player() {
   enemy_timer.set(0s);
   enemy_timer.start();
 }
@@ -9,6 +9,8 @@ void Game::update() {
   if (MouseL.down()) {
     changeScene(U"Result");
   }
+
+  game_time = Scene::Time() - start_time;
 
   if (enemy_timer.reachedZero()) {
     enemies.emplace_back();
@@ -29,7 +31,7 @@ void Game::update() {
 void Game::draw() const {
   Scene::SetBackground(ColorF(0.3, 0.4, 0.5));
 
-  FontAsset(U"TitleFont")(U"Game").drawAt(400, 100);
+  FontAsset(U"TitleFont")(game_time).drawAt(400, 100);
 
   player.draw();
   enemies.each([](const Enemy& e) { e.draw(); });

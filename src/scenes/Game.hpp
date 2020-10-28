@@ -9,6 +9,8 @@ class Game : public App::Scene {
   Player player;
   Array<Enemy> enemies;
   Timer enemy_timer;
+  const double start_time;
+  double game_time;
 
 public:
   Game(const InitData& init);
