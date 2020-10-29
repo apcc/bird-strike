@@ -1,4 +1,4 @@
-#include "Utils.hpp"
+#include "utils.hpp"
 
 void Utils::fullScreenTrigger(bool& isFullScreen) {
   if (!isFullScreen && KeyF11.down()) {
