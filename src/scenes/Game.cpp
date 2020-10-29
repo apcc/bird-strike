@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game(const InitData& init) : IScene(init), start_time(Scene::Time()) {
+Game::Game(const InitData& init) : IScene(init), game_time(true) {
   enemy_timer.set(0s);
   enemy_timer.start();
 }
@@ -8,14 +8,13 @@ Game::Game(const InitData& init) : IScene(init), start_time(Scene::Time()) {
 void Game::update() {
   if (player.getHP() <= 0) {
     // TODO: 終了時アニメーション
+    game_time.pause();
     changeScene(U"Result");
   }
 
-  game_time = Scene::Time() - start_time;
-
   if (enemy_timer.reachedZero()) {
     enemies.push_back(std::make_shared<Bird>());
-    enemy_timer.set(SecondsF((Random(1.0, 2.0) / 1000 / (game_time + 1))));
+    enemy_timer.set(SecondsF((Random(1.0, 2.0) / 1000 / (game_time.sF() + 1))));
   }
 
   player.update();
@@ -34,7 +33,7 @@ void Game::update() {
 void Game::draw() const {
   Scene::SetBackground(ColorF(0.3, 0.4, 0.5));
 
-  FontAsset(U"TitleFont")(game_time).drawAt(400, 100);
+  FontAsset(U"TitleFont")(game_time.sF()).drawAt(400, 100);
 
   player.draw();
   enemies.each([](const std::shared_ptr<Enemy> e) { e->draw(); });

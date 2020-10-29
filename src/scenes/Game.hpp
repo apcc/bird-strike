@@ -10,8 +10,7 @@ class Game : public App::Scene {
   Player player;
   Array < std::shared_ptr<Enemy> > enemies;
   Timer enemy_timer;
-  const double start_time;
-  double game_time;
+  Stopwatch game_time;
 
 public:
   Game(const InitData& init);
