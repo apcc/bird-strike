@@ -6,7 +6,7 @@ Game::Game(const InitData& init) : IScene(init), start_time(Scene::Time()) {
 }
 
 void Game::update() {
-  if (MouseL.down()) {
+  if (player.getHP() <= 0) {
     changeScene(U"Result");
   }
 
