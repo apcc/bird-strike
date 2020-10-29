@@ -32,26 +32,28 @@ void Result::draw() const {
   Scene::SetBackground(ColorF(0.3, 0.4, 0.5));
 
   FontAsset(U"Cornerstone-120")(U"Score: {}"_fmt(getData().score)).draw(
-      Arg::topCenter = Vec2(960, 100));
+      Arg::topLeft = Vec2(100, 400));
 
   FontAsset(U"Cornerstone-120")(U"Rank: {}"_fmt(rank)).draw(
-      Arg::topCenter = Vec2(960, 300));
+      Arg::topLeft = Vec2(100, 600));
 
-  FontAsset(U"Cornerstone-60")(U"Ranking").draw(
-      Arg::topCenter = Vec2(960, 500));
+  auto rankingRect = FontAsset(U"Cornerstone-60")(U"Ranking").draw(
+      Arg::topCenter = Vec2(1440, 250));
+
+  rankingRect.bottom().draw(2.0, Palette::White);
 
   bool reachedCurrent = 0;
-  for (uint32 i = 0; i < 3; ++i) {
+  for (uint32 i = 0; i < 5; ++i) {
     if (scores.size() <= i) break;
 
     const ColorF color = (!reachedCurrent && scores[i] == getData().score) ? Palette::Yellow : Palette::White;
     if (scores[i] == getData().score) reachedCurrent = 1;
 
     FontAsset(U"Cornerstone-60")(U"{}."_fmt(i + 1)).draw(
-        Arg::topRight = Vec2(800, 600 + 100*i), color);
+        Arg::topRight = Vec2(1300, 400 + 100*i), color);
 
     FontAsset(U"Cornerstone-60")(U"{}"_fmt(scores[i])).draw(
-        Arg::topRight = Vec2(1180, 600 + 100*i), color);
+        Arg::topRight = Vec2(1600, 400 + 100*i), color);
   }
 
 
