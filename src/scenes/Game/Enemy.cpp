@@ -12,5 +12,5 @@ double Enemy::getDepth() const {
 }
 
 bool Enemy::collidesWith(const Player& p) {
-  return intersected = (p.shape().intersects(shape()));
+  return intersected = (p.shape().intersects(shape()) && depth < 0);
 }
