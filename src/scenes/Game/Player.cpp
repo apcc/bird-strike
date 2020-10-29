@@ -1,7 +1,7 @@
 #include "Player.hpp"
 
 Player::Player()
-  : pos(0, 0) {
+  : pos(Scene::Rect().center()) {
 }
 
 void Player::update() {
@@ -15,7 +15,11 @@ void Player::update() {
   if (KeyD.pressed())
     pos += Vec2(Speed, 0);
 
-  pos.clamp(Scene::Rect());
+  Rect playableArea = Scene::Rect();
+
+  playableArea.setSize(Scene::Rect().w - 2*size, Scene::Rect().h - 2*size).setCenter(Scene::Rect().center().asPoint());
+
+  pos.clamp(playableArea);
 }
 
 void Player::draw() const {
