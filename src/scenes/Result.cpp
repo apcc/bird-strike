@@ -34,7 +34,7 @@ void Result::draw() const {
   FontAsset(U"Cornerstone-120")(U"Score: {}"_fmt(getData().score)).draw(
       Arg::topLeft = Vec2(100, 400));
 
-  FontAsset(U"Cornerstone-120")(U"Rank: {}"_fmt(rank)).draw(
+  FontAsset(U"Cornerstone-120")(U"Rank: {}/{}"_fmt(rank, scores.size())).draw(
       Arg::topLeft = Vec2(100, 600));
 
   auto rankingRect = FontAsset(U"Cornerstone-60")(U"Ranking").draw(
