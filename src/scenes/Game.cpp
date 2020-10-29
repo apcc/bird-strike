@@ -7,6 +7,7 @@ Game::Game(const InitData& init) : IScene(init), start_time(Scene::Time()) {
 
 void Game::update() {
   if (player.getHP() <= 0) {
+    // TODO: 終了時アニメーション
     changeScene(U"Result");
   }
 
