@@ -33,7 +33,7 @@ void Game::update() {
 void Game::draw() const {
   Scene::SetBackground(ColorF(0.3, 0.4, 0.5));
 
-  FontAsset(U"TitleFont")(game_time.sF()).drawAt(400, 100);
+  FontAsset(U"TitleFont")(Format(game_time.sF())).drawAt(400, 100);
 
   player.draw();
   enemies.each([](const std::shared_ptr<Enemy> e) { e->draw(); });
