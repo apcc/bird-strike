@@ -4,7 +4,7 @@ Result::Result(const InitData& init)
   : IScene(init) {
   {
     TextWriter writer(U"scores.txt", OpenMode::Append);
-    writer.writeln(U"Score: {}"_fmt(getData().score));
+    writer.writeln(Format(getData().score));
   }
 }
 
