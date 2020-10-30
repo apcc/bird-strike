@@ -7,8 +7,10 @@ Game::Game(const InitData& init) : IScene(init), game_time(true) {
 
 void Game::update() {
   if (player.getHP() <= 0) {
-    // TODO: 終了時アニメーション
     game_time.pause();
+    getData().score = game_time.sF() * 1000;
+
+    // TODO: 終了時アニメーション
     changeScene(U"Result");
   }
 
