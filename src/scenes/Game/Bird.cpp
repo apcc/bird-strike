@@ -10,7 +10,10 @@ void Bird::update() {
 }
 
 void Bird::draw() const {
-  Circle(pos, 20).draw(Palette::Green.lerp(Palette::White, depth / 2));
+  uint64 const type = RandomUint64()%3;
+
+  TextureAsset(U"Bird{}"_fmt(type)).drawAt(pos);
+  // Circle(pos, 20).draw(Palette::Green.lerp(Palette::White, depth / 2));
 }
 
 int32 Bird::getDamage() const {
