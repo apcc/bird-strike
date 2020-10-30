@@ -17,6 +17,7 @@ void Main() {
   bool isFullScreen = false;
 
   registerFontAssets();
+  registerTextureAssets();
   registerScenes(manager);
 
   while (System::Update()) {

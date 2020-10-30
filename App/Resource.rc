@@ -62,6 +62,19 @@ Resource(resources/fonts/NotoSansJP-Bold.otf)
 Resource(resources/fonts/Inter-Medium.ttf)
 Resource(resources/fonts/Inter-Bold.ttf)
 
+
+Resource(resources/images/plane/plane0.png)
+Resource(resources/images/plane/plane1.png)
+Resource(resources/images/plane/plane2.png)
+
+Resource(resources/images/bird/bird0.png)
+Resource(resources/images/bird/bird1.png)
+Resource(resources/images/bird/bird2.png)
+
+Resource(resources/images/player/player0.png)
+Resource(resources/images/player/player1.png)
+Resource(resources/images/player/player2.png)
+
 /* 
 	//
 	// Define your resource path inside `Resource()` macro.
