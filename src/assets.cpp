@@ -13,6 +13,7 @@ void registerFontAssets() {
   FontAsset::Register(U"Inter-M-60", 60, toResourcePath(Noto_Medium));
   FontAsset::Register(U"Inter-B-60", 60, toResourcePath(Noto_Bold));
   FontAsset::Register(U"Cornerstone-60", 60, toResourcePath(Cornerstone));
+  FontAsset::Register(U"Cornerstone-120", 120, toResourcePath(Cornerstone));
 }
 
 void registerTextureAssets() {
