@@ -23,7 +23,7 @@ void Player::update() {
 }
 
 void Player::draw() const {
-  shape().draw(Palette::Cyan);
+  TextureAsset(U"Player1").drawAt(pos);
 }
 
 void Player::decreaseHP(int32 damage) {

@@ -3,4 +3,6 @@
 
 void registerFontAssets();
 
+void registerTextureAssets();
+
 FilePath toResourcePath(FilePath _path);
