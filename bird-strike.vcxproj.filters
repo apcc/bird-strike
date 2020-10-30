@@ -135,15 +135,6 @@
     <Image Include="App\example\test.gif">
       <Filter>Resource Files\example</Filter>
     </Image>
-    <Image Include="..\..\player0.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\player2.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\player1.png">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="App\Resource.rc">
