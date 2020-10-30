@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -113,6 +113,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\assets.cpp" />
+    <ClCompile Include="src\scenes\Game\Bird.cpp" />
+    <ClCompile Include="src\scenes\Game\Enemy.cpp" />
+    <ClCompile Include="src\scenes\Game\Player.cpp" />
     <ClCompile Include="src\utils.cpp" />
     <ClCompile Include="src\main.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)src\</AdditionalIncludeDirectories>
@@ -250,6 +253,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\assets.hpp" />
+    <ClInclude Include="src\scenes\Game\Bird.hpp" />
+    <ClInclude Include="src\scenes\Game\Enemy.hpp" />
+    <ClInclude Include="src\scenes\Game\Player.hpp" />
     <ClInclude Include="src\utils.hpp" />
     <ClInclude Include="src\common.hpp" />
     <ClInclude Include="src\scenes.hpp" />
