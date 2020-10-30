@@ -128,6 +128,9 @@
     <ClCompile Include="src\scenes\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\player0.png" />
+    <Image Include="..\..\player1.png" />
+    <Image Include="..\..\player2.png" />
     <Image Include="App\engine\texture\box-shadow\128.png" />
     <Image Include="App\engine\texture\box-shadow\16.png" />
     <Image Include="App\engine\texture\box-shadow\256.png" />

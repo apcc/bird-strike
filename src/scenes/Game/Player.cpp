@@ -23,7 +23,9 @@ void Player::update() {
 }
 
 void Player::draw() const {
-  TextureAsset(U"Player1").drawAt(pos);
+  int64 const type = Scene::Time()*3*8;
+
+  TextureAsset(U"Player{}"_fmt(type%3)).drawAt(pos);
 }
 
 void Player::decreaseHP(int32 damage) {
