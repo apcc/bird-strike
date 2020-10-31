@@ -75,6 +75,8 @@ Resource(resources/images/player/player0.png)
 Resource(resources/images/player/player1.png)
 Resource(resources/images/player/player2.png)
 
+Resource(resources/images/background.png)
+
 /* 
 	//
 	// Define your resource path inside `Resource()` macro.

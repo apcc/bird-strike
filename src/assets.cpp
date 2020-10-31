@@ -26,6 +26,7 @@ void registerTextureAssets() {
   const FilePath Bird_0 = U"resources/images/bird/bird0.png";
   const FilePath Bird_1 = U"resources/images/bird/bird1.png";
   const FilePath Bird_2 = U"resources/images/bird/bird2.png";
+  const FilePath Background = U"resources/images/background.png";
 
   TextureAsset::Register(U"Player0", toResourcePath(Player_0));
   TextureAsset::Register(U"Player1", toResourcePath(Player_1));
@@ -36,6 +37,7 @@ void registerTextureAssets() {
   TextureAsset::Register(U"Bird0", toResourcePath(Bird_0));
   TextureAsset::Register(U"Bird1", toResourcePath(Bird_1));
   TextureAsset::Register(U"Bird2", toResourcePath(Bird_2));
+  TextureAsset::Register(U"Background", toResourcePath(Background));
 }
 
 

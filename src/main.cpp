@@ -22,6 +22,8 @@ void Main() {
 
   while (System::Update()) {
     Utils::fullScreenTrigger(isFullScreen);
+
+    TextureAsset(U"Background").scaled(1920/1280.0).drawAt(Scene::Center());
     if (!manager.update())
       break;
   }
