@@ -13,7 +13,7 @@ public:
 
   void draw() const override;
 
-  Circle shape() const override { return Circle(pos, 20); }
+  Circle shape() const override { return Circle(pos, 40); }
 
   int32 getDamage() const override;
 };

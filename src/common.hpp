@@ -6,3 +6,5 @@ struct GameData {
 };
 
 using App = SceneManager<String, GameData>;
+
+extern const KeyGroup KeyAny;

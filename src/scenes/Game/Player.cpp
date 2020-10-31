@@ -1,7 +1,8 @@
 #include "Player.hpp"
 
 Player::Player()
-  : pos(Scene::Rect().center()) {
+  : pos(Scene::Rect().center())
+  , heartTexture(Emoji(U"❤️")) {
 }
 
 void Player::update() {
@@ -26,11 +27,14 @@ void Player::draw() const {
   int64 const type = Scene::Time()*3*8;
 
   TextureAsset(U"Player{}"_fmt(type%3)).drawAt(pos);
+
+  for (int32 i = 0; i < hp; ++i) {
+    heartTexture.drawAt(Vec2(1300 + 120*i, 100));
+  }
 }
 
 void Player::decreaseHP(int32 damage) {
   hp -= damage;
-  Print << hp;
 }
 
 int32 Player::getHP() const {

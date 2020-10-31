@@ -6,7 +6,7 @@ Game::Game(const InitData& init) : IScene(init), game_time(true) {
 }
 
 void Game::update() {
-  if (player.getHP() <= 0) {
+  if (player.getHP() <= 0 || (KeyShift + KeyEnter).down()) {
     game_time.pause();
     getData().score = game_time.sF() * 1000;
 
@@ -16,7 +16,7 @@ void Game::update() {
 
   if (enemy_timer.reachedZero()) {
     enemies.push_back(std::make_shared<Bird>());
-    enemy_timer.set(SecondsF((Random(1.0, 2.0) / 1000 / (game_time.sF() + 1))));
+    enemy_timer.set(SecondsF((Random(10.0, 20.0) / (game_time.sF() + 1))));
   }
 
   player.update();
