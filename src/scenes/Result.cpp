@@ -1,4 +1,5 @@
 #include "Result.hpp"
+#include <common.hpp>
 
 Result::Result(const InitData& init)
   : IScene(init) {
@@ -23,19 +24,19 @@ Result::Result(const InitData& init)
 }
 
 void Result::update() {
-  if (MouseL.down()) {
+  if (KeyAny.down()) {
     changeScene(U"Title");
   }
 }
 
 void Result::draw() const {
-  Scene::SetBackground(ColorF(0.3, 0.4, 0.5));
+  RoundRect(100, 100, 1720, 880, 20).draw(ColorF(0, 0.3));
 
   FontAsset(U"Cornerstone-120")(U"Score: {}"_fmt(getData().score)).draw(
-      Arg::topLeft = Vec2(100, 400));
+      Arg::topLeft = Vec2(150, 400));
 
   FontAsset(U"Cornerstone-120")(U"Rank: {}/{}"_fmt(rank, scores.size())).draw(
-      Arg::topLeft = Vec2(100, 600));
+      Arg::topLeft = Vec2(150, 600));
 
   auto rankingRect = FontAsset(U"Cornerstone-60")(U"Ranking").draw(
       Arg::topCenter = Vec2(1440, 250));
